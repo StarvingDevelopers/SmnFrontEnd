@@ -1,8 +1,41 @@
-﻿<main>
-  <div>
-    <div>
-      <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
-      <h1>SMN</h1>
+﻿<main id="login-root">
+  <div id="login-wrapper" class="shadow">
+    <div id="branding">
+      <div class="img-circle shadow">
+        <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
+      </div>
+      <p>SMN</p>
+    </div>
+
+    <ng-form id="login-inputs">
+      <p class="p-less-attention">Login</p>
+      <div id="login-inputs-wrapper-vertical">
+        <div id="login-user-name">
+          <i class="fa-solid fa-user-lock"></i>
+          <input class="shadow">
+        </div>
+        <div id="login-inputs-wrapper-horizontal">
+          <div id="login-password">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" class="shadow">
+          </div>
+          <div>
+            <i routerLink="/home" class="fa-solid fa-arrow-up-right-from-square"></i>
+            <button routerLink="/home" id="login-submit" class="shadow"></button>
+          </div>
+        </div>
+      </div>
+    </ng-form>
+
+    <div id="login-options">
+      <div class="login-option shadow">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        <p class="p-less-attention">Register</p>
+      </div>
+      <div class="login-option shadow">
+        <i class="fa-solid fa-link-slash"></i>
+        <p class="p-less-attention">Fpw</p>
+      </div>
     </div>
   </div>
 </main>
