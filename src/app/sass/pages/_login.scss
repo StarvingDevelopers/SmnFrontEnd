@@ -3,7 +3,7 @@
 #login-root {
   display: flex;
   align-items: center;
-  transform: scale(2.5);
+  transform: scale(2);
   overflow: visible;
 }
 
@@ -13,6 +13,7 @@
   gap: 20px;
   padding: 24px;
   border-radius: 24px;
+  background-color: $contrast_background;
 }
 
 .smn-icon {
@@ -27,11 +28,18 @@
   align-items: center;
   gap: 7px;
   font-size: 32px;
+
+  color: $base_topography_color;
 }
 
 .p-less-attention {
-  color: $strokes_less_attention;
+  color: $base_topography_color;
 }
+
+.p-less-attention-dark {
+  color: $strokes_less_attention_dark;
+}
+
 
 #login-inputs {
   display: flex;
@@ -51,6 +59,12 @@
 
     i {
       cursor: pointer;
+    }
+
+    :nth-child(2){
+      button {
+        background-color: $group_color_2;
+      }
     }
   }
 
@@ -96,7 +110,7 @@
     z-index: 1;
     border-radius: 12px;
     gap: 7px;
-    background-color: $group_color_3;
+    background-color: $group_color_1;
     width: 91px;
     height: 101px;
 

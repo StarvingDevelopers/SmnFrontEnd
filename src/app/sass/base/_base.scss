@@ -1,5 +1,8 @@
-﻿body {
+﻿@import "../abstracts/variables";
+
+body {
   margin: 0;
+  background-color: $base_background;
 }
 
 main {

@@ -7,28 +7,28 @@
       <p>SMN</p>
     </div>
 
-    <ng-form id="login-inputs">
-      <p class="p-less-attention">Login</p>
+    <form [formGroup]="login" (ngSubmit)="onSubmit()" id="login-inputs">
+      <p class="p-less-attention-dark">Login</p>
       <div id="login-inputs-wrapper-vertical">
         <div id="login-user-name">
           <i class="fa-solid fa-user-lock"></i>
-          <input class="shadow">
+          <input formControlName="userName" class="shadow">
         </div>
         <div id="login-inputs-wrapper-horizontal">
           <div id="login-password">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" class="shadow">
+            <input formControlName="password" type="password" class="shadow">
           </div>
           <div>
-            <i routerLink="/home" class="fa-solid fa-arrow-up-right-from-square"></i>
-            <button routerLink="/home" id="login-submit" class="shadow"></button>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <button type="submit" id="login-submit" class="shadow"></button>
           </div>
         </div>
       </div>
-    </ng-form>
+    </form>
 
     <div id="login-options">
-      <div class="login-option shadow">
+      <div routerLink="/register" routerLinkActive="active" class="login-option shadow">
         <i class="fa-solid fa-arrow-right-to-bracket"></i>
         <p class="p-less-attention">Register</p>
       </div>
