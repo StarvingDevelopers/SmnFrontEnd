@@ -1,0 +1,41 @@
+﻿<main id="login-root">
+  <div id="login-wrapper" class="shadow">
+    <div id="branding">
+      <div class="img-circle shadow">
+        <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
+      </div>
+      <p>SMN</p>
+    </div>
+
+    <form [formGroup]="login" (ngSubmit)="onSubmit()" id="login-inputs">
+      <p class="p-less-attention-dark">Login</p>
+      <div id="login-inputs-wrapper-vertical">
+        <div id="login-user-name">
+          <i class="fa-solid fa-user-lock"></i>
+          <input formControlName="userName" class="shadow">
+        </div>
+        <div id="login-inputs-wrapper-horizontal">
+          <div id="login-password">
+            <i class="fa-solid fa-lock"></i>
+            <input formControlName="password" type="password" class="shadow">
+          </div>
+          <div>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <button type="submit" id="login-submit" class="shadow"></button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div id="login-options">
+      <div routerLink="/register" routerLinkActive="active" class="login-option shadow">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        <p class="p-less-attention">Register</p>
+      </div>
+      <div class="login-option shadow">
+        <i class="fa-solid fa-link-slash"></i>
+        <p class="p-less-attention">Fpw</p>
+      </div>
+    </div>
+  </div>
+</main>

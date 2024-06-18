@@ -1,1 +1,122 @@
-﻿
+﻿@import "../abstracts/variables";
+
+#login-root {
+  display: flex;
+  align-items: center;
+  transform: scale(2);
+  overflow: visible;
+}
+
+#login-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 24px;
+  background-color: $contrast_background;
+}
+
+.smn-icon {
+  position: absolute;
+  transform: scale(.5);
+  right: -90px;
+  top: -35px;
+}
+
+#branding {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 32px;
+
+  color: $base_topography_color;
+}
+
+.p-less-attention {
+  color: $base_topography_color;
+}
+
+.p-less-attention-dark {
+  color: $strokes_less_attention_dark;
+}
+
+
+#login-inputs {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  #login-inputs-wrapper-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  #login-inputs-wrapper-horizontal {
+    display: flex;
+    gap: 7px;
+
+    i {
+      cursor: pointer;
+    }
+
+    :nth-child(2){
+      button {
+        background-color: $group_color_2;
+      }
+    }
+  }
+
+  div {
+    position: relative;
+    z-index: 1;
+  }
+
+  i {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+  }
+
+  input {
+    border-radius: 10px;
+    background-color: $group_color_3;
+    width: 220px;
+    height: 40px;
+    padding: 0 0 0 40px;
+  }
+
+  #login-submit {
+    border-radius: 10px;
+    background-color: $group_color_3;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+}
+
+#login-options {
+  display: flex;
+  gap: 7px;
+
+  .login-option {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 12px;
+    gap: 7px;
+    background-color: $group_color_1;
+    width: 91px;
+    height: 101px;
+
+    i {
+      font-size: 55px;
+    }
+  }
+}
+

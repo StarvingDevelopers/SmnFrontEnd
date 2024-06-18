@@ -1,0 +1,37 @@
+﻿@import "../abstracts/variables";
+
+body {
+  margin: 0;
+  background-color: $base_background;
+}
+
+main {
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.img-circle {
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.shadow {
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+input, button {
+  outline: none;
+  border: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+i, p{
+  z-index: 2;
+}

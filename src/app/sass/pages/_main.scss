@@ -1,0 +1,13 @@
+﻿#main-root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#blobs img{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
