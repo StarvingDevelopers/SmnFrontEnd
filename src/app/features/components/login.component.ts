@@ -4,7 +4,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'login',
+  selector: 'login-root',
   standalone: true,
   imports: [RouterOutlet, NgOptimizedImage, RouterLink, FormsModule, ReactiveFormsModule, RouterLinkActive],
   templateUrl: '../pages/login/login.component.html',
