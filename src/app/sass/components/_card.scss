@@ -1,0 +1,45 @@
+﻿@import "../abstracts/variables";
+
+smn-card {
+  width: 15%;
+}
+
+.card {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 7px;
+
+  padding: 12px;
+  border-radius: 10px;
+
+  h3 {
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 7px;
+    object-fit: contain;
+  }
+}
+
+.group-card-text {
+  color: $strokes_less_attention;
+
+  h3 {
+    color: $strokes_attention;
+  }
+
+  width: 100%;
+  overflow: hidden;
+}
+
+.bola-azul {
+  background-color: $bola_color_1;
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+}

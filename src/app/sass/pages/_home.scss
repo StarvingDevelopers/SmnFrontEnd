@@ -1,24 +1,42 @@
 ﻿@import "../abstracts/variables";
 
 #smn-root {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   padding: 15px;
   gap: 15px;
+
+  box-sizing: border-box;
 }
 
-#sid-nav {
-  width: 10%;
+#side-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#home-options {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #groups {
-  width: 90%;
+  width: 100%;
 
   h1 {
     margin: 0;
   }
 }
 
-#groups,#sid-nav {
+#groups,#side-nav {
   background-color: $contrast_background;
   border-radius: 12px;
   padding: 12px;
@@ -29,54 +47,8 @@
   gap: 7px;
 }
 
-.group-card {
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-
-  background-color: $group_color_2;
-
-  width: 15%;
-  gap: 7px;
-
-  padding: 12px;
-  border-radius: 10px;
-
-  h3 {
-    margin: 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 7px;
-    object-fit: contain;
-  }
-}
-
-.group-card-text {
-  color: $strokes_less_attention;
-
-  h3 {
-    color: $strokes_attention;
-  }
-
-  width: 100%;
-  overflow: hidden;
-}
-
-.bola-azul {
-  background-color: $bola_color_1;
-  width: 16px;
-  height: 16px;
-
-  border-radius: 50%;
-}
-
 .group-section-title {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-
-
