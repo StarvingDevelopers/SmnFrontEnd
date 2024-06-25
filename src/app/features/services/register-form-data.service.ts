@@ -19,6 +19,6 @@ export class FormDataService {
 
   postFormData() {
 
-    this.http.post<FormData>('https://backend.starvingdevelopers.tech/account/create', { username: this.formData.value.userName, nickname: this.formData.value.nickName, email: this.formData.value.email, password: this.formData.value.password, gender: this.formData.value.gender, birthdate: this.formData.value.birthdate }));
+    this.http.post<FormData>('https://backend.starvingdevelopers.tech/account/create', { username: this.formData.value.userName, nickname: this.formData.value.nickName, email: this.formData.value.email, password: this.formData.value.password, gender: this.formData.value.gender, birthdate: this.formData.value.birthdate });
   }
 }
