@@ -231,4 +231,91 @@ main {
   color: #fff;
 }
 
+#register-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#register-wrapper {
+  background-color: #343434;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 280px;
+}
+#register-wrapper #step-count {
+  width: 100%;
+  display: flex;
+  margin: 5px 0 10px 0;
+}
+#register-wrapper #step-count .dash {
+  transform: scaleX(11) translateX(-2px);
+  z-index: 1;
+  color: #6C5E5E;
+}
+#register-wrapper #step-count .dash:hover {
+  cursor: default;
+}
+#register-wrapper #step-count .number {
+  margin-right: 50px;
+  background-color: #6C5E5E;
+  color: #3F3636;
+  font-size: 14px;
+  border-radius: 100%;
+  height: 26px;
+  width: 26px;
+  text-align: center;
+  line-height: 26px;
+}
+#register-wrapper #step-count .filled {
+  background-color: #D47363;
+}
+#register-wrapper #step-count .number:hover {
+  cursor: default;
+}
+#register-wrapper .register-inputs-wrapper-vertical .input {
+  display: flex;
+  background-color: #ECD06B;
+  padding: 5px;
+  border-radius: 10px;
+  align-content: center;
+  margin-bottom: 10px;
+}
+#register-wrapper .register-inputs-wrapper-vertical .input input {
+  background-color: #ECD06B;
+  width: 100%;
+}
+#register-wrapper .register-inputs-wrapper-vertical button {
+  display: flex;
+  align-items: center;
+  background-color: #ECD06B;
+  border-radius: 8px;
+  width: 145px;
+  height: 30px;
+  justify-content: center;
+  color: #3F3636;
+}
+#register-wrapper .register-inputs-wrapper-vertical button img {
+  margin-left: 5px;
+}
+#register-wrapper .register-text-horizontal {
+  display: flex;
+}
+#register-wrapper .register-text-horizontal p {
+  margin-right: 90px;
+}
+#register-wrapper .register-inputs-horizontal {
+  display: flex;
+}
+#register-wrapper .register-inputs-horizontal div {
+  margin-right: 10px;
+}
+#register-wrapper button:hover {
+  cursor: pointer;
+}
+
+.register-inputs-wrapper-vertical p {
+  font-size: 12px;
+}
+
 /*# sourceMappingURL=main.css.map */
