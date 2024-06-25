@@ -3,7 +3,7 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {NgOptimizedImage} from "@angular/common";
 
 @Component({
-  selector: 'smn-root',
+  selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NgOptimizedImage, RouterLink, RouterLinkActive],
   templateUrl: 'app.component.html',
