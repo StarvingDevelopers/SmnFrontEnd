@@ -6,6 +6,7 @@ import {UserComponent} from "../../core/components/user.component";
 export class AuthService {
 
   constructor(private http: HttpClient) {
+
   }
 
   login(email:string, password:string ) {

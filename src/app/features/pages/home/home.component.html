@@ -1,24 +1,29 @@
 ﻿<main id="smn-root">
 
-  <nav id="sid-nav">
+  <nav id="side-nav">
     <section id="home-options">
-      <div>
-        cwse
-      </div>
-      <div>
-        ce
-      </div>
-      <div>
-        ce
-      </div>
-      <div>
-        ce
-      </div>
+      <smn-option>
+        <div class="shadow">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </smn-option>
+
+      <smn-option>
+        <div class="shadow">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </smn-option>
+
+      <smn-option>
+        <div class="shadow">
+          <i class="fa-solid fa-star"></i>
+        </div>
+      </smn-option>
     </section>
 
     <section id="profile">
-      <div>
-
+      <div class="img-circle shadow">
+        <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
       </div>
     </section>
   </nav>
@@ -34,44 +39,17 @@
       </div>
 
       <div class="inner-groups">
-        <div class="group-card shadow">
-          <i class="bola-azul"></i>
-          <img class="shadow" ngSrc="assets/images/fantasminha.png" height="127" width="225" alt="">
-          <div class="group-card-text">
-            <h3>AAAAAAAA</h3>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-          </div>
-        </div>
-
-        <div class="group-card shadow">
-          <i class="bola-azul"></i>
-          <img class="shadow" ngSrc="assets/images/fantasminha.png" height="127" width="225" alt="">
-          <div class="group-card-text">
-            <h3>AAAAAAAA</h3>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-          </div>
-        </div>
-
-        <div class="group-card shadow">
-          <i class="bola-azul"></i>
-          <img class="shadow" ngSrc="assets/images/fantasminha.png" height="127" width="225" alt="">
-          <div class="group-card-text">
-            <h3>AAAAAAAA</h3>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-          </div>
-        </div>
-
-        <div class="group-card shadow">
-          <i class="bola-azul"></i>
-          <img class="shadow" ngSrc="assets/images/fantasminha.png" height="127" width="225" alt="">
-          <div class="group-card-text">
-            <h3>AAAAAAAA</h3>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-          </div>
-        </div>
+        @for (co of colors; track co) {
+          <smn-card color="#C74D5C">
+            <i class="bola-azul"></i>
+            <img class="shadow" ngSrc="assets/images/fantasminha.png" height="127" width="225" alt="">
+            <div class="group-card-text">
+              <h3>AAAAAAAA</h3>
+              <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+          </smn-card>
+        }
       </div>
-
-
     </section>
   </section>
 
