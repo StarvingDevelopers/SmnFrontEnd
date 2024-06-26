@@ -104,6 +104,7 @@ smn-card {
 }
 
 #side-nav {
+  font-size: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -146,10 +147,16 @@ smn-card {
 }
 
 #login-root {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
-  transform: scale(2);
+  justify-content: center;
   overflow: visible;
+}
+#login-root i {
+  text-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3);
+  color: #000;
 }
 
 #login-wrapper {
@@ -158,6 +165,7 @@ smn-card {
   gap: 20px;
   padding: 24px;
   border-radius: 24px;
+  transform: scale(2);
   background-color: #343434;
 }
 
@@ -174,6 +182,10 @@ smn-card {
   gap: 7px;
   font-size: 32px;
   color: #fff;
+}
+
+.p-attention {
+  color: #000;
 }
 
 .p-less-attention {
@@ -242,7 +254,7 @@ smn-card {
   z-index: 1;
   border-radius: 12px;
   gap: 7px;
-  background-color: #C74D5C;
+  background-color: #ECD06B;
   width: 91px;
   height: 101px;
 }
