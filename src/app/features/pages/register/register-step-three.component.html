@@ -1,0 +1,45 @@
+<div id="register-steps">
+  <p>Create Account</p>
+  <div id="step-count">
+    <p class="number">1</p>
+    <p class="dash">-</p>
+    <p class="number">2</p>
+    <p class="dash">-</p>
+    <p class="number filled">3</p>
+  </div>
+</div>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="register-inputs-wrapper-vertical">
+    <p class="p-less-attention-dark">Username:</p>
+    <div class="input shadow">
+      <input [(ngModel)]="formData.userName" name="userName" type="text" required>
+    </div>
+
+    <p class="p-less-attention-dark">Nickname:</p>
+    <div class="input shadow">
+      <input [(ngModel)]="formData.nickName" name="nickName" type="text" required>
+    </div>
+
+    <div class="register-text-horizontal">
+      <p class="p-less-attention-dark">Birthday:</p>
+      <p class="p-less-attention-dark">Gender:</p>
+    </div>
+
+    <div class="register-inputs-horizontal">
+      <div class="register-inputs-vertical input">
+        <input [(ngModel)]="formData.birthdate" name="birthdate" type="date" required>
+      </div>
+      <div class="register-inputs-vertical input shadow">
+        <input [(ngModel)]="formData.gender" name="gender" type="text" required>
+      </div>
+    </div>
+
+    <div>
+      <button type="submit" id="register-next-one" class="shadow">
+        Next
+        <img ngSrc="../../../../assets/images/box_arrow.svg" height="20" width="20" alt="">
+      </button>
+    </div>
+  </div>
+</form>
