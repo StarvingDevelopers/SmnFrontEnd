@@ -7,12 +7,13 @@
       <p>SMN</p>
     </div>
 
-    <form [formGroup]="login" (ngSubmit)="onSubmit()" id="login-inputs">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login-inputs">
       <p class="p-less-attention-dark">Login</p>
       <div id="login-inputs-wrapper-vertical">
         <div id="login-user-name">
           <i class="fa-solid fa-user-lock"></i>
-          <input formControlName="userName" class="shadow">
+          <input formControlName="username" class="shadow">
+
         </div>
         <div id="login-inputs-wrapper-horizontal">
           <div id="login-password">
@@ -30,11 +31,11 @@
     <div id="login-options">
       <div routerLink="/register" routerLinkActive="active" class="login-option shadow">
         <i class="fa-solid fa-arrow-right-to-bracket"></i>
-        <p class="p-less-attention">Register</p>
+        <p class="p-attention">Register</p>
       </div>
       <div class="login-option shadow">
         <i class="fa-solid fa-link-slash"></i>
-        <p class="p-less-attention">Fpw</p>
+        <p class="p-attention">Fpw</p>
       </div>
     </div>
   </div>

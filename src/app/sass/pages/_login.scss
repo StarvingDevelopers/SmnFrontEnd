@@ -1,10 +1,17 @@
 ﻿@import "../abstracts/variables";
 
 #login-root {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
-  transform: scale(2);
+  justify-content: center;
   overflow: visible;
+
+  i {
+    text-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3);
+    color: $strokes_attention;
+  }
 }
 
 #login-wrapper{
@@ -13,6 +20,7 @@
   gap: 20px;
   padding: 24px;
   border-radius: 24px;
+  transform: scale(2);
   background-color: $contrast_background;
 }
 
@@ -32,6 +40,10 @@
   color: $base_topography_color;
 }
 
+.p-attention{
+  color: $strokes_attention;
+}
+
 .p-less-attention {
   color: $base_topography_color;
 }
@@ -39,7 +51,6 @@
 .p-less-attention-dark {
   color: $strokes_less_attention_dark;
 }
-
 
 #login-inputs {
   display: flex;
@@ -110,7 +121,7 @@
     z-index: 1;
     border-radius: 12px;
     gap: 7px;
-    background-color: $group_color_1;
+    background-color: $group_color_3;
     width: 91px;
     height: 101px;
 
