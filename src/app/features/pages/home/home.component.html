@@ -1,36 +1,38 @@
 ﻿<main id="smn-root">
 
   <nav id="side-nav">
-    <section id="home-options">
-      <smn-option>
-        <div class="shadow">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-      </smn-option>
+    <div id="nav-first-half">
+      <section id="home-options">
+        <smn-option>
+          <div class="shadow">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </smn-option>
 
-      <smn-option>
-        <div class="shadow">
-          <i class="fa-solid fa-plus"></i>
-        </div>
-      </smn-option>
+        <smn-option>
+          <div class="shadow">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+        </smn-option>
+      </section>
 
-      <smn-option>
-        <div class="shadow">
-          <i class="fa-solid fa-star"></i>
-        </div>
-      </smn-option>
-    </section>
+      <section id="friends">
+        <smn-friend-card></smn-friend-card>
+      </section>
+    </div>
 
-    <section id="profile">
-      <div class="img-circle shadow">
-        <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
-      </div>
-    </section>
+    <div id="nav-second-half">
+      <section id="profile">
+        <div class="img-circle shadow">
+          <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
+        </div>
+      </section>
+    </div>
   </nav>
 
   <section id="groups">
 
-    <h1>Boa noite, carlinhos</h1>
+    <h1>Boa noite, {{userData.username}}</h1>
 
     <section id="user-groups" class="group-sections">
       <div class="group-section-title">
@@ -42,9 +44,9 @@
         @for (co of colors; track co) {
           <smn-card color="#C74D5C">
             <i class="bola-azul"></i>
-            <img class="shadow" ngSrc="assets/images/fantasminha.png" height="127" width="225" alt="">
+            <img class="shadow" ngSrc="assets/images/fantasminha.png" priority height="127" width="225" alt="">
             <div class="group-card-text">
-              <h3>AAAAAAAA</h3>
+              <h3>Eita</h3>
               <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
             </div>
           </smn-card>

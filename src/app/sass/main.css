@@ -79,6 +79,21 @@ smn-card {
   border-radius: 50%;
 }
 
+smn-friend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: initial;
+}
+smn-friend-card div {
+  width: 70px;
+  height: 70px;
+  background-color: #000;
+  border-radius: 10px;
+}
+
 .option div {
   display: flex;
   justify-content: center;
@@ -108,6 +123,21 @@ smn-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#nav-first-half {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#friends {
+  max-height: 68vh;
+  overflow: scroll;
+}
+
+#friends::-webkit-scrollbar {
+  display: none;
 }
 
 #home-options {

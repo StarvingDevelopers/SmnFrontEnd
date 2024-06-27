@@ -17,6 +17,21 @@
   justify-content: space-between;
 }
 
+#nav-first-half {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#friends {
+  max-height: 68vh;
+  overflow: scroll;
+}
+
+#friends::-webkit-scrollbar{
+  display: none;
+}
+
 #home-options {
   display: flex;
   flex-direction: column;
