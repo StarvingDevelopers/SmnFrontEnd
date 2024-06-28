@@ -1,0 +1,137 @@
+#profile-configurations {
+  background: #343434;
+  background: linear-gradient(0deg, rgba(52,52,52,1) 39%, rgba(127,126,223,0.2) 68%);
+  border-radius: 12px;
+  width: 100%;
+  padding: 80px 40px;
+
+  #profile-upper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    h1 {
+      font-weight: normal;
+    }
+
+    #profile-information {
+      min-width: 200px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .nickName {
+        color: #C2C2C2;
+        font-size: small;
+      }
+    }
+  }
+
+  #profile-lower {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    margin-right: 25px;
+
+    p {
+      font-size: smaller;
+      color: #C2C2C2;
+      margin: 8px 5px;
+    }
+
+    #configurations-inputs-left {
+      .input-wrapper {
+        background-color: #ECD06B;
+        display: flex;
+        align-items: center;
+        height: 42px;
+        width: 306px;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        input {
+          background-color: transparent;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    #configurations-inputs-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .img-circle-big {
+        background-color: #aaa;
+        border-radius: 50%;
+        width: 240px;
+        height: 240px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 100%;
+          width: calc(100% * 240);
+          overflow: visible;
+        }
+      }
+
+      input {
+        position: absolute;
+        z-index: -2;
+        transform: translateY(20000px);
+      }
+
+      div #button-wrapper {
+        position: relative;
+      }
+
+      label {
+        background-color: #D9D9D9;
+        padding: 3px 12px;
+        color: #3F3636;
+        border-radius: 5px;
+        float: right;
+        transform: translateY(-20px) translateX(-20px);
+      }
+
+      label:hover {
+        cursor: pointer;
+      }
+
+      p {
+        width: 100%;
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      #bio-input {
+        height: 112px;
+        width: 325px;
+        background-color: #ECD06B;
+        border-radius: 10px;
+        text-wrap: wrap;
+      }
+    }
+  }
+
+  #submit-button {
+    width: 82px;
+    height: 30px;
+    background-color: #C2C2C2;
+    border-radius: 10px;
+    color: #3F3636;
+    font-size: large;
+    float: right;
+  }
+
+  #submit-button:hover {
+    cursor: pointer;
+  }
+}

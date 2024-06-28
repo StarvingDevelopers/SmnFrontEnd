@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit{
   handleResponse(response: any) {
     this.authService.login();
     localStorage.setItem('userData', JSON.stringify(response));
+
     this.router.navigate(['/'])
   }
 
