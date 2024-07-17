@@ -109,6 +109,18 @@ smn-friend-card div {
   font-size: 40px;
 }
 
+.profile-card {
+  position: absolute;
+  background: #f9f9f9;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
 #smn-root {
   height: 100vh;
   width: 100vw;
@@ -174,6 +186,12 @@ smn-friend-card div {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.a:hover .profile-card {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #login-root {

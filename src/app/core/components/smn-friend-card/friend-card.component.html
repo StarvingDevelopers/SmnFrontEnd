@@ -1,8 +1,3 @@
-﻿@for (friend of friends; track friends) {
-
-  <div class="shadow">
-    <p>{{friend.leftUsername}}</p>
-  </div>
-
-}
-
+﻿<div *ngFor="let friend of friends"  (mouseenter)="showProfile(friend)" (mouseleave)="hideProfile()" class="shadow a">
+  <p>{{friend.leftUsername}}</p>
+</div>

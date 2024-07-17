@@ -68,3 +68,9 @@
   align-items: center;
   gap: 5px;
 }
+
+.a:hover .profile-card {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
