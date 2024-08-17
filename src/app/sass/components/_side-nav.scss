@@ -1,0 +1,41 @@
+@import "../abstracts/variables";
+
+#side-nav {
+  font-size: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: $contrast_background;
+  border-radius: 12px;
+  padding: 12px;
+
+  height: 95%;
+}
+
+#nav-first-half {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#friends {
+  max-height: 68vh;
+  overflow: scroll;
+}
+
+#friends::-webkit-scrollbar{
+  display: none;
+}
+
+#home-options {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

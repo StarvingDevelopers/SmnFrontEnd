@@ -1,13 +1,16 @@
 ﻿import {Component, OnInit} from "@angular/core";
 import {FriendsService} from "../../../features/services/friends.service";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
+import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-card.component";
 
 @Component({
   selector: 'smn-friend-card',
   templateUrl: './friend-card.component.html',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    UserProfileCardComponent,
+    NgIf
   ],
   styleUrls: ['../../../sass/main.css']
 })
@@ -15,6 +18,7 @@ import {NgForOf} from "@angular/common";
 export class FriendCardComponent implements OnInit{
   friends: any[] = [];
   activeFriend: any = null;
+  eita = false
 
   constructor(private friendService: FriendsService) {}
 
@@ -25,9 +29,6 @@ export class FriendCardComponent implements OnInit{
         this.friends = friends;
       },
       error: (err) => {
-        this.friends = [
-          {leftUsername: 'aaaaaa'}
-        ]
         console.error(err);
       }
     });
@@ -35,9 +36,12 @@ export class FriendCardComponent implements OnInit{
 
   showProfile(friend: any): void {
     this.activeFriend = friend;
+    this.eita = true
+    console.log('ta la')
   }
 
   hideProfile(): void {
     this.activeFriend = null;
+    this.eita = false;
   }
 }

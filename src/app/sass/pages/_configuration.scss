@@ -1,0 +1,42 @@
+@import "../abstracts/variables";
+
+configuration {
+  width: 100%;
+}
+
+#configuration {
+  display: flex;
+  height: 95%;
+}
+
+#configuration-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    color: $strokes_less_attention_dark;
+    align-self: flex-end;
+  }
+}
+
+#configuration-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#right-configuration-form {
+  input[type="file"] {
+    display: none;
+  }
+}
