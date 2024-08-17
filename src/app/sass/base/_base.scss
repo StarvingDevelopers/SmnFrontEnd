@@ -8,6 +8,14 @@ body {
   background-color: $base_background;
 }
 
+.window {
+  background-color: $contrast_background;
+  border-radius: 12px;
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+}
+
 main {
   min-height: 100vh;
   overflow: clip;

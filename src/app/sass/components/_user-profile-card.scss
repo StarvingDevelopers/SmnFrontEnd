@@ -1,0 +1,49 @@
+@import "../abstracts/variables";
+
+smn-user-profile-card {
+  background-color: $base_background;
+  border-radius: 17px;
+  position: absolute;
+  left: 100px;
+}
+
+.user-profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+
+  max-width: 300px;
+}
+
+.user-card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      color: $strokes_less_attention_dark;
+    }
+  }
+}
+
+.tag-user {
+  background-color: $contrast_background;
+  border-radius: 7px;
+  min-height: 25px;
+  max-width: 70px;
+  text-align: center;
+}
+
+.user-card-bio {
+  background-color: $contrast_background;
+  border-radius: 7px;
+  padding: 5px;
+}

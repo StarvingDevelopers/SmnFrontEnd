@@ -5,7 +5,6 @@ import {HomeComponent} from "./features/components/home.component";
 import {AuthGuardProviders} from "./core/guard/auth.guard";
 import {ProfileConfigurationComponent} from "./features/components/profile-configuration.component";
 
-
 export const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuardProviders] },
   { path: 'login',  component: LoginComponent },

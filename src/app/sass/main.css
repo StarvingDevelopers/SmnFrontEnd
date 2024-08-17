@@ -6,6 +6,14 @@ body {
   background-color: #000;
 }
 
+.window {
+  background-color: #343434;
+  border-radius: 12px;
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+}
+
 main {
   min-height: 100vh;
   overflow: clip;
@@ -87,7 +95,7 @@ smn-friend-card {
   gap: 7px;
   font-size: initial;
 }
-smn-friend-card div {
+smn-friend-card .friend-wrapper {
   width: 70px;
   height: 70px;
   background-color: #000;
@@ -109,20 +117,15 @@ smn-friend-card div {
   font-size: 40px;
 }
 
-#smn-root {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  padding: 15px;
-  gap: 15px;
-  box-sizing: border-box;
-}
-
 #side-nav {
   font-size: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #343434;
+  border-radius: 12px;
+  padding: 12px;
+  height: 95%;
 }
 
 #nav-first-half {
@@ -152,17 +155,66 @@ smn-friend-card div {
   justify-content: center;
 }
 
+smn-user-profile-card {
+  background-color: #000;
+  border-radius: 17px;
+  position: absolute;
+  left: 100px;
+}
+
+.user-profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+  max-width: 300px;
+}
+
+.user-card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.user-card-header div {
+  display: flex;
+  flex-direction: column;
+}
+.user-card-header div h3 {
+  margin: 0;
+}
+.user-card-header div p {
+  color: #C2C2C2;
+}
+
+.tag-user {
+  background-color: #343434;
+  border-radius: 7px;
+  min-height: 25px;
+  max-width: 70px;
+  text-align: center;
+}
+
+.user-card-bio {
+  background-color: #343434;
+  border-radius: 7px;
+  padding: 5px;
+}
+
+home {
+  width: 100%;
+}
+
+#home {
+  display: flex;
+  height: 95%;
+}
+
 #groups {
+  position: relative;
   width: 100%;
 }
 #groups h1 {
   margin: 0;
-}
-
-#groups, #side-nav {
-  background-color: #343434;
-  border-radius: 12px;
-  padding: 12px;
 }
 
 .inner-groups {
@@ -174,6 +226,24 @@ smn-friend-card div {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.a:hover .profile-card {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#gradient {
+  position: absolute;
+  height: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 12px;
+  z-index: -1;
+  transition: height 2s;
 }
 
 #login-root {
@@ -269,6 +339,9 @@ smn-friend-card div {
   height: 40px;
   cursor: pointer;
 }
+#login-inputs #login-submit i {
+  position: initial;
+}
 
 #login-options {
   display: flex;
@@ -292,18 +365,14 @@ smn-friend-card div {
   font-size: 55px;
 }
 
-#main-root {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  overflow: hidden;
 }
 
-#blobs img {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
+#app-root {
+  display: flex;
+  padding: 15px;
+  gap: 7px;
 }
 
 main {
