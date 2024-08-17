@@ -1,12 +1,12 @@
-﻿import {Component, OnInit, ViewEncapsulation} from "@angular/core";
+﻿import {Component, OnInit} from "@angular/core";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CardComponent} from "../../core/components/smn-card/card.component";
 import {OptionsComponent} from "../../core/components/smn-options/options.component";
-import {FriendsService} from "../services/friends.service";
 import {FriendCardComponent} from "../../core/components/smn-friend-card/friend-card.component";
 import {SideNavComponent} from "../../core/components/smn-side-nav/side-nav.component";
+import {DataService} from "../services/data.service";
 
 @Component({
   selector: 'home',
@@ -17,13 +17,15 @@ import {SideNavComponent} from "../../core/components/smn-side-nav/side-nav.comp
 })
 
 export class HomeComponent implements OnInit{
+  constructor(private dataService: DataService) { }
+
   userData = JSON.parse(localStorage.getItem("userData")!)
+  userAccount = JSON.parse(localStorage.getItem("userAccount")!)
   greeting = ""
-
-
   colors = ["Red", "Blue", "White"];
 
   ngOnInit() {
+    this.getUserAccount();
     this.changeGreeting();
   }
 
@@ -37,5 +39,17 @@ export class HomeComponent implements OnInit{
     } else {
       this.greeting = "Boa noite"
     }
+  }
+
+  getUserAccount() {
+    this.dataService.getData('/account/' + this.userData.username).subscribe({
+        next: response => this.handleResponse(response),
+        error: err => console.log(err)
+      }
+    )
+  }
+
+  handleResponse(response: any) {
+    localStorage.setItem('userAccount', JSON.stringify(response));
   }
 }
