@@ -6,6 +6,7 @@ import {CardComponent} from "../../core/components/smn-card/card.component";
 import {OptionsComponent} from "../../core/components/smn-options/options.component";
 import {FriendCardComponent} from "../../core/components/smn-friend-card/friend-card.component";
 import {SideNavComponent} from "../../core/components/smn-side-nav/side-nav.component";
+import {DataService} from "../services/data.service";
 
 @Component({
   selector: 'home',
@@ -16,12 +17,16 @@ import {SideNavComponent} from "../../core/components/smn-side-nav/side-nav.comp
 })
 
 export class HomeComponent implements OnInit{
-  userData = JSON.parse(localStorage.getItem("userData")!)
+  constructor(private dataService: DataService) { }
+
+  userAccount = JSON.parse(localStorage.getItem("userAccount")!)
+  userProfile = JSON.parse(localStorage.getItem("userProfile")!)
   greeting = ""
 
   colors = ["#C74D5C", "#7F7EDF", "#ECD06B"];
 
   ngOnInit() {
+    this.getUserProfile();
     this.changeGreeting();
   }
 
@@ -35,5 +40,17 @@ export class HomeComponent implements OnInit{
     } else {
       this.greeting = "Boa noite"
     }
+  }
+
+  getUserProfile() {
+    this.dataService.getData('/profile/' + this.userAccount.username).subscribe({
+        next: response => this.handleResponse(response),
+        error: err => console.log(err)
+      }
+    )
+  }
+
+  handleResponse(response: any) {
+    localStorage.setItem('userProfile', JSON.stringify(response));
   }
 }
