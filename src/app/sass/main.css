@@ -200,42 +200,6 @@ smn-user-profile-card {
   padding: 5px;
 }
 
-configuration {
-  width: 100%;
-}
-
-#configuration {
-  display: flex;
-  height: 95%;
-}
-
-#configuration-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#configuration-header div {
-  display: flex;
-  flex-direction: column;
-}
-#configuration-header h2 {
-  margin: 0;
-}
-#configuration-header p {
-  color: #C2C2C2;
-  align-self: flex-end;
-}
-
-#configuration-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#right-configuration-form input[type=file] {
-  display: none;
-}
-
 home {
   width: 100%;
 }
