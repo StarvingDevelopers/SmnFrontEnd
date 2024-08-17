@@ -12,14 +12,14 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   // Método GET
-  getData(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/dados`);
+  getData(path: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}` + path);
   }
 
   // Método POST
-  postData(data: any): Observable<any> {
+  postData(data: any, path: string): Observable<any> {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.post<any>(`${this.apiUrl}/auth/authenticate`, data, { headers }).pipe(
+    return this.http.post<any>(`${this.apiUrl}` + path, data, { headers }).pipe(
       catchError(this.handleError)
     )
   }
