@@ -19,13 +19,13 @@ import {DataService} from "../services/data.service";
 export class HomeComponent implements OnInit{
   constructor(private dataService: DataService) { }
 
-  userData = JSON.parse(localStorage.getItem("userData")!)
   userAccount = JSON.parse(localStorage.getItem("userAccount")!)
+  userProfile = JSON.parse(localStorage.getItem("userProfile")!)
   greeting = ""
   colors = ["Red", "Blue", "White"];
 
   ngOnInit() {
-    this.getUserAccount();
+    this.getUserProfile();
     this.changeGreeting();
   }
 
@@ -41,8 +41,8 @@ export class HomeComponent implements OnInit{
     }
   }
 
-  getUserAccount() {
-    this.dataService.getData('/account/' + this.userData.username).subscribe({
+  getUserProfile() {
+    this.dataService.getData('/profile/' + this.userAccount.username).subscribe({
         next: response => this.handleResponse(response),
         error: err => console.log(err)
       }
@@ -50,6 +50,6 @@ export class HomeComponent implements OnInit{
   }
 
   handleResponse(response: any) {
-    localStorage.setItem('userAccount', JSON.stringify(response));
+    localStorage.setItem('userProfile', JSON.stringify(response));
   }
 }
