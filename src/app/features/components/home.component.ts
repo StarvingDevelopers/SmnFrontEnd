@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit{
   userAccount = JSON.parse(localStorage.getItem("userAccount")!)
   userProfile = JSON.parse(localStorage.getItem("userProfile")!)
   greeting = ""
-  colors = ["Red", "Blue", "White"];
+
+  colors = ["#C74D5C", "#7F7EDF", "#ECD06B"];
 
   ngOnInit() {
     this.getUserProfile();
