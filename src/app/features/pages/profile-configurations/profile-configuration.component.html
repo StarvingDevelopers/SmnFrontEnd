@@ -5,12 +5,12 @@
 
       <section id="profile-information">
         <div>
-          <p class="userName">Carlinhos</p>
-          <p class="nickName">carlinhos1234</p>
+          <p class="userName">{{ userName }}</p>
+          <p class="nickName">{{ nickName }}</p>
         </div>
 
         <div class="img-circle shadow">
-          <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
+          <img class="smn-icon" src="{{ url }}" height="127" width="225" alt="SMN logo" >
         </div>
       </section>
     </div>
@@ -53,7 +53,7 @@
 
           <div>
             <div class="img-circle-big shadow">
-              <img ngSrc="{{url}}" alt="profile picture" height="127" width="225" priority>
+              <img src="{{ url }}" alt="profile picture" height="127" width="225">
             </div>
             <div id="button-wrapper">
               <label for="profilePictureInput">Edit</label>

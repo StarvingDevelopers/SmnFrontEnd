@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
 import {OptionsComponent} from "../../core/components/smn-options/options.component";
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
@@ -16,18 +16,16 @@ import {DataService} from "../services/data.service";
   templateUrl: '../pages/profile-configurations/profile-configuration.component.html',
   styleUrl: '../../sass/main.css'
 })
+
 export class ProfileConfigurationComponent {
   imagePath: undefined;
-  url: string | ArrayBuffer | null = './assets/images/fantasminha.png';
-  currentData: any;
+  currentUserData: any = JSON.parse(<string>localStorage.getItem('userAccount')!);
+  currentUserProfile = JSON.parse(localStorage.getItem('userProfile')!)
+  url: string | ArrayBuffer = this.currentUserProfile.profileImage ? this.currentUserProfile.profileImage : './assets/images/fantasminha.png';
+  userName: string = this.currentUserData.username;
+  nickName: string = this.currentUserProfile.nickname;
 
-  constructor(private formBuilder: FormBuilder, private dataService: DataService) {
-    this.currentData = localStorage.getItem('userData');
-
-    this.currentData = JSON.parse(this.currentData);
-
-    console.log(this.currentData);
-  }
+  constructor(private formBuilder: FormBuilder, private dataService: DataService) {}
 
   updatedForm: FormGroup = this.formBuilder.group({
     nickName: [''],
@@ -41,7 +39,7 @@ export class ProfileConfigurationComponent {
 
   onSubmit() {
     const userData = {
-      username: this.currentData.username,
+      username: this.currentUserData.username,
       password: this.updatedForm.get('password')?.value
     }
 
@@ -53,7 +51,7 @@ export class ProfileConfigurationComponent {
 
   updateProfile(response: any) {
     const updatedData = {
-      username: this.currentData.username,
+      username: this.currentUserData.username,
       nickname: this.updatedForm.get('nickName')?.value,
       email: this.updatedForm.get('email')?.value,
       password: this.updatedForm.get('newPassword')?.value,
@@ -69,12 +67,7 @@ export class ProfileConfigurationComponent {
   }
 
   handleResponse(response: any) {
-    console.log(response);
-
-    this.currentData.username = response.username;
-    this.currentData.gender = response.gender;
-
-    localStorage.setItem('userData', JSON.stringify(this.currentData));
+    localStorage.setItem('userProfile', JSON.stringify(response));
   }
 
   pictureUploaded(event: any) {
@@ -85,9 +78,7 @@ export class ProfileConfigurationComponent {
     this.imagePath = files;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
-      this.url = reader.result;
+      this.url = reader.result!;
     }
   }
-
-
 }

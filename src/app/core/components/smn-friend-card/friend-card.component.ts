@@ -23,7 +23,7 @@ export class FriendCardComponent implements OnInit{
   constructor(private friendService: FriendsService) {}
 
   ngOnInit(): void {
-    let user = JSON.parse(localStorage.getItem("userData")!)
+    let user = JSON.parse(localStorage.getItem("userAccount")!)
     this.friendService.getFriendsList(user.username).subscribe({
       next: (friends) => {
         this.friends = friends;
