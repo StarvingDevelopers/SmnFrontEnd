@@ -1,10 +1,9 @@
-﻿import {Component, OnInit, ViewEncapsulation} from "@angular/core";
+﻿import {Component, OnInit} from "@angular/core";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CardComponent} from "../../core/components/smn-card/card.component";
 import {OptionsComponent} from "../../core/components/smn-options/options.component";
-import {FriendsService} from "../services/friends.service";
 import {FriendCardComponent} from "../../core/components/smn-friend-card/friend-card.component";
 import {SideNavComponent} from "../../core/components/smn-side-nav/side-nav.component";
 
@@ -20,8 +19,7 @@ export class HomeComponent implements OnInit{
   userData = JSON.parse(localStorage.getItem("userData")!)
   greeting = ""
 
-
-  colors = ["Red", "Blue", "White"];
+  colors = ["#C74D5C", "#7F7EDF", "#ECD06B"];
 
   ngOnInit() {
     this.changeGreeting();

@@ -209,11 +209,11 @@ home {
   height: 95%;
 }
 
-#groups {
+.groups {
   position: relative;
   width: 100%;
 }
-#groups h1 {
+.groups h1 {
   margin: 0;
 }
 
@@ -234,7 +234,7 @@ home {
   pointer-events: auto;
 }
 
-#gradient {
+.gradient {
   position: absolute;
   height: 0;
   top: 0;
