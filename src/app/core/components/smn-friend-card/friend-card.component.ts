@@ -2,7 +2,6 @@
 import {FriendsService} from "../../../features/services/friends.service";
 import {NgForOf, NgIf} from "@angular/common";
 import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-card.component";
-import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'smn-friend-card',
