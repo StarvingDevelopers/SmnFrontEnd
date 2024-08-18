@@ -1,0 +1,4 @@
+<div *ngFor="let friend of friendRequestProfile; let i = index" (click)="showProfile(i)" class="friend-request-list-item">
+  <img src="{{friend.profileImage}}" class="friend-pfp" alt="">
+  <smn-user-profile-card tag="btns" [id]="friendRequestList[i].id" [isVisible]="visibility[i]" [userName]="friend.username" [nickName]="friend.nickname" [description]="friend.description" [profileImage]="friend.profileImage"></smn-user-profile-card>
+</div>

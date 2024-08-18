@@ -18,6 +18,18 @@ home {
   }
 }
 
+.home-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  i {
+    font-size: 25px;
+    cursor: pointer;
+  }
+}
+
 .inner-groups {
   display: flex;
   gap: 7px;
@@ -29,7 +41,7 @@ home {
   gap: 5px;
 }
 
-.a:hover .profile-card {
+.profile-card {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;

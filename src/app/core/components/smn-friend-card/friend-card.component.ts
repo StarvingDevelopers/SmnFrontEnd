@@ -15,7 +15,7 @@ import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-ca
   styleUrls: ['../../../sass/main.css']
 })
 
-export class FriendCardComponent implements OnInit{
+export class FriendCardComponent implements OnInit {
   friends: any[] = [];
   visibility: boolean[] = []
 

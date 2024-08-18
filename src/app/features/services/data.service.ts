@@ -11,21 +11,36 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  // Método GET
+  // Metodo GET
   getData(path: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}` + path);
+    return this.http.get<any>(`${this.apiUrl}${path}`);
   }
 
-  // Método POST
+  // Metodo POST
   postData(data: any, path: string): Observable<any> {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.post<any>(`${this.apiUrl}` + path, data, { headers }).pipe(
+    return this.http.post<any>(`${this.apiUrl}/${path}`, data, { headers }).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  // Metodo POST sem body
+  postDataWithoutBody(path: string): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post<any>(`${this.apiUrl}${path}`, null, { headers }).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  deleteData(path: string): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.delete<any>(`${this.apiUrl}${path}`, { headers }).pipe(
       catchError(this.handleError)
     )
   }
 
   private handleError(error: HttpErrorResponse) {
-    let errorMessage = '';
+    let errorMessage;
 
     if (error.error instanceof ErrorEvent) {
       errorMessage = `Client-side error: ${error.error.message}`;

@@ -1,0 +1,22 @@
+smn-friend-request-list {
+  position: absolute;
+  width: 100px;
+  height: 300px;
+  background: #000;
+  right: 40px;
+  top: 25px;
+
+  padding: 15px 5px 15px 5px;
+  border-radius: 12px;
+
+  smn-user-profile-card {
+    left: -190px !important;
+  }
+}
+
+.friend-request-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

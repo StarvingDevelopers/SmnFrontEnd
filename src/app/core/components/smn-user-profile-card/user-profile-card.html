@@ -6,7 +6,15 @@
       <p>{{nickName}}</p>
     </div>
   </div>
-  <span class="tag-user">Amigo</span>
+  <div *ngIf="tag === 'btns'" class="friend-accept-deny-wrapper">
+    <button (click)="acceptFriendRequest(id)" class="accept-friend-btn">
+      Aceitar
+    </button>
+    <button (click)="denyFriendRequest(id)" class="deny-friend-btn">
+      Recusar
+    </button>
+  </div>
+  <span *ngIf="tag !== 'btns'" class="tag-user">{{tag}}</span>
   <div class="user-card-bio">
     <p>
       {{description}}

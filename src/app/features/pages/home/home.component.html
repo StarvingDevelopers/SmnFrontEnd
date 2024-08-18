@@ -2,7 +2,12 @@
   <div id="groups" class="window">
     <div id="gradient"></div>
 
-    <h1>{{greeting}}, {{userAccount.username}}</h1>
+    <div class="home-header">
+      <h1>{{greeting}}, {{userAccount.username}}</h1>
+      <i class="fa-solid fa-users-rectangle" (click)="openFriendRequestList()"></i>
+      <smn-friend-request-list *ngIf="friendRequestListVisibility"></smn-friend-request-list>
+    </div>
+
 
     <section id="user-groups" class="group-sections">
       <div class="group-section-title">
