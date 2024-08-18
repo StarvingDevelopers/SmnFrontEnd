@@ -18,12 +18,12 @@ import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-ca
 export class FriendCardComponent implements OnInit{
   friends: any[] = [];
   activeFriend: any = null;
-  eita = false
+  show = false
 
   constructor(private friendService: FriendsService) {}
 
   ngOnInit(): void {
-    let user = JSON.parse(localStorage.getItem("userData")!)
+    let user = JSON.parse(localStorage.getItem("userAccount")!)
     this.friendService.getFriendsList(user.username).subscribe({
       next: (friends) => {
         this.friends = friends;
@@ -36,12 +36,11 @@ export class FriendCardComponent implements OnInit{
 
   showProfile(friend: any): void {
     this.activeFriend = friend;
-    this.eita = true
-    console.log('ta la')
+    this.show = true
   }
 
   hideProfile(): void {
     this.activeFriend = null;
-    this.eita = false;
+    this.show = false;
   }
 }
