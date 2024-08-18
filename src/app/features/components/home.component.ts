@@ -1,17 +1,18 @@
 ﻿import {Component, OnInit} from "@angular/core";
 import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
-import {NgOptimizedImage} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CardComponent} from "../../core/components/smn-card/card.component";
 import {OptionsComponent} from "../../core/components/smn-options/options.component";
 import {FriendCardComponent} from "../../core/components/smn-friend-card/friend-card.component";
 import {SideNavComponent} from "../../core/components/smn-side-nav/side-nav.component";
 import {DataService} from "../services/data.service";
+import {FriendRequestListComponent} from "../../core/components/smn-friend-list/friend-request-list.component";
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [RouterOutlet, NgOptimizedImage, RouterLink, FormsModule, ReactiveFormsModule, RouterLinkActive, CardComponent, OptionsComponent, FriendCardComponent, SideNavComponent],
+  imports: [RouterOutlet, NgOptimizedImage, RouterLink, FormsModule, ReactiveFormsModule, RouterLinkActive, CardComponent, OptionsComponent, FriendCardComponent, SideNavComponent, FriendRequestListComponent, NgIf],
   templateUrl: '../pages/home/home.component.html',
   styleUrl: '../../sass/main.css'
 })
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit{
   userAccount = JSON.parse(localStorage.getItem("userAccount")!)
   userProfile = JSON.parse(localStorage.getItem("userProfile")!)
   greeting = ""
+  friendRequestListVisibility: boolean = false
 
   colors = ["#C74D5C", "#7F7EDF", "#ECD06B"];
 
@@ -52,5 +54,9 @@ export class HomeComponent implements OnInit{
 
   handleResponse(response: any) {
     localStorage.setItem('userProfile', JSON.stringify(response));
+  }
+
+  openFriendRequestList() {
+    this.friendRequestListVisibility = !this.friendRequestListVisibility
   }
 }

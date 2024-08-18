@@ -107,6 +107,26 @@ smn-friend-card .friend-wrapper {
   border-radius: 10px;
 }
 
+smn-friend-request-list {
+  position: absolute;
+  width: 100px;
+  height: 300px;
+  background: #000;
+  right: 40px;
+  top: 25px;
+  padding: 15px 5px 15px 5px;
+  border-radius: 12px;
+}
+smn-friend-request-list smn-user-profile-card {
+  left: -190px !important;
+}
+
+.friend-request-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .option div {
   display: flex;
   justify-content: center;
@@ -206,6 +226,25 @@ smn-user-profile-card {
   padding: 5px;
 }
 
+.friend-accept-deny-wrapper {
+  display: flex;
+  gap: 7px;
+}
+
+.accept-friend-btn, .deny-friend-btn {
+  border-radius: 7px;
+  padding: 5px 12px 5px 12px;
+  color: white;
+}
+
+.accept-friend-btn {
+  background-color: #85A97D;
+}
+
+.deny-friend-btn {
+  background-color: #C74D5C;
+}
+
 home {
   width: 100%;
 }
@@ -223,6 +262,17 @@ home {
   margin: 0;
 }
 
+.home-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-header i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
 .inner-groups {
   display: flex;
   gap: 7px;
@@ -234,7 +284,7 @@ home {
   gap: 5px;
 }
 
-.a:hover .profile-card {
+.profile-card {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
