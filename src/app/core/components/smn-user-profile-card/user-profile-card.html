@@ -1,15 +1,15 @@
-<div class="user-profile-wrapper">
+<div *ngIf="isVisible" class="user-profile-wrapper">
   <div class="user-card-header">
-    <p>foto aqui</p>
+    <img class="friend-pfp" src="{{profileImage}}" alt="">
     <div class="user-card-names">
-      <h3>{{name}}</h3>
-      <p>XxinfelizxX</p>
+      <h3>{{userName}}</h3>
+      <p>{{nickName}}</p>
     </div>
   </div>
   <span class="tag-user">Amigo</span>
   <div class="user-card-bio">
     <p>
-      aaaaaaaa
+      {{description}}
     </p>
   </div>
 </div>

@@ -2,6 +2,7 @@
 import {FriendsService} from "../../../features/services/friends.service";
 import {NgForOf, NgIf} from "@angular/common";
 import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-card.component";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'smn-friend-card',
@@ -17,8 +18,7 @@ import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-ca
 
 export class FriendCardComponent implements OnInit{
   friends: any[] = [];
-  activeFriend: any = null;
-  show = false
+  visibility: boolean[] = []
 
   constructor(private friendService: FriendsService) {}
 
@@ -32,15 +32,17 @@ export class FriendCardComponent implements OnInit{
         console.error(err);
       }
     });
+
+    this.visibility = new Array(this.friends.length).fill(false);
   }
 
-  showProfile(friend: any): void {
-    this.activeFriend = friend;
-    this.show = true
-  }
+  showProfile(index: number): void {
+    this.visibility.forEach((isVisible, i) => {
+      if (isVisible && i !== index) {
+        this.visibility[i] = false;
+      }
+    });
 
-  hideProfile(): void {
-    this.activeFriend = null;
-    this.show = false;
+    this.visibility[index] = !this.visibility[index];
   }
 }
