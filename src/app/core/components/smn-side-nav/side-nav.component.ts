@@ -2,16 +2,18 @@ import {Component, Input, Renderer2, ElementRef} from '@angular/core';
 import {FriendCardComponent} from "../smn-friend-card/friend-card.component";
 import {NgOptimizedImage} from "@angular/common";
 import {OptionsComponent} from "../smn-options/options.component";
+import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-card.component";
 
 @Component({
   selector: 'smn-side-nav',
   templateUrl: './side-nav.component.html',
   standalone: true,
-  imports: [
-    FriendCardComponent,
-    NgOptimizedImage,
-    OptionsComponent
-  ],
+    imports: [
+        FriendCardComponent,
+        NgOptimizedImage,
+        OptionsComponent,
+        UserProfileCardComponent
+    ],
   styleUrls: ['../../../sass/main.css']
 })
 

@@ -10,6 +10,6 @@ export class FriendsService {
   constructor(private dataService: DataService) { }
 
   getFriendsList(user: string): Observable<any>{
-    return this.dataService.getData('/friend/friend-list/' + user).pipe(map(data => data.friends))
+    return this.dataService.getData('/friend/friend-list-details/' + user).pipe(map(data => data.friendsProfile))
   }
 }

@@ -45,6 +45,12 @@ i, p {
   z-index: 2;
 }
 
+.friend-pfp {
+  height: 70px;
+  width: 70px;
+  border-radius: 12px;
+}
+
 html {
   font-family: "Kanit", monospace;
 }
@@ -98,7 +104,6 @@ smn-friend-card {
 smn-friend-card .friend-wrapper {
   width: 70px;
   height: 70px;
-  background-color: #000;
   border-radius: 10px;
 }
 
@@ -160,6 +165,7 @@ smn-user-profile-card {
   border-radius: 17px;
   position: absolute;
   left: 100px;
+  z-index: 2;
 }
 
 .user-profile-wrapper {

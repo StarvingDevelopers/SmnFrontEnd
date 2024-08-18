@@ -1,3 +1,4 @@
-﻿<div *ngFor="let friend of friends" (click)="showProfile(friend)" class="shadow a friend-wrapper">
-  <p>{{friend.leftUsername}}</p>
+﻿<div *ngFor="let friend of friends; let i = index" (click)="showProfile(i)" class="friend-wrapper">
+  <img src="{{friend.profileImage}}" class="friend-pfp" alt="">
+  <smn-user-profile-card [isVisible]="visibility[i]" [userName]="friend.username" [nickName]="friend.nickname" [description]="friend.description" [profileImage]="friend.profileImage"></smn-user-profile-card>
 </div>
