@@ -1,4 +1,4 @@
-import {Component, Input, Renderer2, ElementRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {FriendCardComponent} from "../smn-friend-card/friend-card.component";
 import {NgOptimizedImage} from "@angular/common";
 import {OptionsComponent} from "../smn-options/options.component";
