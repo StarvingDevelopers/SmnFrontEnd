@@ -93,6 +93,24 @@ smn-card {
   border-radius: 50%;
 }
 
+.color-picker h4 {
+  margin: 0 0 7px;
+}
+
+.color-box-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.color-box {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 smn-friend-card {
   display: flex;
   flex-direction: column;
@@ -127,6 +145,45 @@ smn-friend-request-list smn-user-profile-card {
   justify-content: center;
 }
 
+#group-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  padding: 12px;
+  border-radius: 12px;
+  z-index: 3;
+}
+#group-modal h2 {
+  margin: 0;
+}
+
+.group-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.group-inputs input {
+  height: 40px;
+  border-radius: 10px;
+  background-color: #ECD06B;
+}
+
+#group-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#group-modal-header i {
+  cursor: pointer;
+}
+
+.option {
+  cursor: pointer;
+}
 .option div {
   display: flex;
   justify-content: center;
@@ -299,7 +356,7 @@ home {
   left: 0;
   border-radius: 12px;
   z-index: -1;
-  transition: height 2s;
+  transition: height 1s;
 }
 
 #login-root {

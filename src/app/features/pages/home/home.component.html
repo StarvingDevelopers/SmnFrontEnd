@@ -16,13 +16,13 @@
       </div>
 
       <div class="inner-groups">
-        @for (co of colors; track co) {
-          <smn-card color="{{co}}">
+        @for (group of groups; track group) {
+          <smn-card color="{{group.baseColor}}">
             <i class="bola-azul"></i>
-            <img class="shadow" ngSrc="assets/images/fantasminha.png" priority height="127" width="225" alt="">
+            <img class="shadow" src="{{group.profileImage}}" priority height="127" width="225" alt="">
             <div class="group-card-text">
-              <h3>Eita</h3>
-              <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+              <h3>{{group.customName}}</h3>
+              <p>{{group.description}}</p>
             </div>
           </smn-card>
         }

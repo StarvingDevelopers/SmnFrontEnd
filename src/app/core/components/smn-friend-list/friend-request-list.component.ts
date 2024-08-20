@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {NgForOf, NgIf} from "@angular/common";
 import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-card.component";
 import {DataService} from "../../../features/services/data.service";
-import {FriendsService} from "../../../features/services/friends.service";
+import {FriendsService} from "../../services/friends.service";
 
 @Component({
   selector: 'smn-friend-request-list',

@@ -7,7 +7,7 @@
         </div>
       </smn-option>
 
-      <smn-option>
+      <smn-option (click)="newGroupBtn()">
         <div class="shadow">
           <i class="fa-solid fa-plus"></i>
         </div>
@@ -16,7 +16,6 @@
 
     <section id="friends">
       <smn-friend-card></smn-friend-card>
-
     </section>
   </div>
 
@@ -24,7 +23,7 @@
     <section id="profile">
       <div class="img-circle shadow">
         <a href="/configuration">
-          <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
+          <img priority class="smn-icon" src="{{userProfile.profileImage}}" height="127" width="225" alt="SMN logo">
         </a>
       </div>
     </section>

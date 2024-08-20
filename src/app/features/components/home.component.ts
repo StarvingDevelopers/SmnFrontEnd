@@ -22,14 +22,14 @@ export class HomeComponent implements OnInit{
 
   userAccount = JSON.parse(localStorage.getItem("userAccount")!)
   userProfile = JSON.parse(localStorage.getItem("userProfile")!)
+  groups: any[] = []
   greeting = ""
   friendRequestListVisibility: boolean = false
 
-  colors = ["#C74D5C", "#7F7EDF", "#ECD06B"];
-
   ngOnInit() {
-    this.getUserProfile();
-    this.changeGreeting();
+    this.getUserProfile()
+    this.getGroups()
+    this.changeGreeting()
   }
 
   changeGreeting() {
@@ -58,5 +58,14 @@ export class HomeComponent implements OnInit{
 
   openFriendRequestList() {
     this.friendRequestListVisibility = !this.friendRequestListVisibility
+  }
+
+  getGroups() {
+    this.dataService.getData('/group/id/2').subscribe({
+      next: response => {
+        this.groups.push(response)
+      },
+      error: err => console.log(err)
+    })
   }
 }

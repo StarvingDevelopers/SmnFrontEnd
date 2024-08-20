@@ -1,5 +1,5 @@
 ﻿import {Component, OnInit} from "@angular/core";
-import {FriendsService} from "../../../features/services/friends.service";
+import {FriendsService} from "../../services/friends.service";
 import {NgForOf, NgIf} from "@angular/common";
 import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-card.component";
 

@@ -1,0 +1,33 @@
+<div *ngIf="isVisible" id="group-modal">
+  <div id="group-modal-header">
+    <h2>Novo grupo</h2>
+    <i (click)="isVisible = false" class="fa-solid fa-xmark"></i>
+  </div>
+
+  <form [formGroup]="groupForm" (ngSubmit)="onSubmit()">
+    <div class="group-inputs">
+      <label>Foto</label>
+      <input type="file" formControlName="photo" (change)="onFileSelected($event)" #fileInput style="display:none">
+      <button type="button" (click)="fileInput.click()">Escolher Foto</button>
+      <div *ngIf="selectedImage" class="image-preview">
+        <img [src]="selectedImage" alt="Preview da foto">
+      </div>
+    </div>
+
+    <div class="group-inputs">
+      <label>Nome</label>
+      <input type="text" formControlName="name">
+    </div>
+
+    <div class="group-inputs">
+      <label>Descrição</label>
+      <input type="text" formControlName="description">
+    </div>
+
+    <div class="group-inputs">
+      <smn-color-picker formControlName="color"></smn-color-picker>
+    </div>
+
+    <button type="submit">Criar Grupo</button>
+  </form>
+</div>

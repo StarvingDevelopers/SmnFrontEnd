@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {NgIf, NgOptimizedImage} from "@angular/common";
-import {FriendsService} from "../../../features/services/friends.service";
+import {FriendsService} from "../../services/friends.service";
 
 @Component({
   selector: 'smn-user-profile-card',
