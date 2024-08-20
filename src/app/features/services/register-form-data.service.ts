@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {HttpClient} from "@angular/common/http";
+import {DataService} from "./data.service";
+import {AuthService} from "../../core/services/auth.service";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +10,7 @@ import {HttpClient} from "@angular/common/http";
 export class FormDataService {
   private formData = new BehaviorSubject<any>({});
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private dataService: DataService, private authService: AuthService, private router: Router) {}
 
   updateFormData(data: any) {
     const currentData = this.formData.value;
@@ -19,6 +19,25 @@ export class FormDataService {
 
   postFormData() {
 
-    this.http.post<FormData>('https://backend.starvingdevelopers.tech/account/create', { username: this.formData.value.userName, nickname: this.formData.value.nickName, email: this.formData.value.email, password: this.formData.value.password, gender: this.formData.value.gender, birthdate: this.formData.value.birthdate });
+    const data = {
+      username: this.formData.value.userName,
+      nickname: this.formData.value.nickName,
+      email: this.formData.value.email,
+      password: this.formData.value.password,
+      gender: this.formData.value.gender,
+      birthdate: this.formData.value.birthdate
+    }
+
+    this.dataService.postData(data,'/account/create').subscribe({
+      next: response => this.handleResponse(response),
+      error: err => console.log(err)
+    });
+  }
+
+  handleResponse(response: any) {
+    this.authService.login();
+    localStorage.setItem('userAccount', JSON.stringify(response));
+
+    this.router.navigate(['/']);
   }
 }

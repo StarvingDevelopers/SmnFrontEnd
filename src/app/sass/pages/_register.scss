@@ -4,10 +4,11 @@ main {
   color: $base_topography_color;
 }
 
-#register-root {
+register {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 #register-wrapper {
