@@ -180,6 +180,30 @@ smn-friend-request-list smn-user-profile-card {
   justify-content: center;
 }
 
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  color: white;
+  opacity: 0.9;
+  z-index: 1000;
+  transition: opacity 0.5s;
+}
+
+.toast-container.success {
+  background-color: #85A97D;
+}
+
+.toast-container.error {
+  background-color: #C74D5C;
+}
+
+.toast-container p {
+  margin: 0;
+}
+
 smn-user-profile-card {
   background-color: #000;
   border-radius: 17px;

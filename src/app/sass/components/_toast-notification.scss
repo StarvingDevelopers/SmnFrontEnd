@@ -1,0 +1,25 @@
+@import "../abstracts/variables";
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  color: white;
+  opacity: 0.9;
+  z-index: 1000;
+  transition: opacity 0.5s;
+}
+
+.toast-container.success {
+  background-color: $group_color_4;
+}
+
+.toast-container.error {
+  background-color: $group_color_1;
+}
+
+.toast-container p {
+  margin: 0;
+}
