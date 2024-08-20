@@ -1,0 +1,24 @@
+@import "../abstracts/variables";
+
+search {
+  width: 100%;
+}
+
+#search {
+  display: flex;
+  height: 95%;
+}
+
+#search-input-wrapper {
+  display: flex;
+  justify-content: center;
+
+  input {
+    color: $strokes;
+    background-color: $group_color_3;
+    border-radius: 10px;
+    width: 220px;
+    height: 40px;
+    padding: 0 0 0 5px;
+  }
+}

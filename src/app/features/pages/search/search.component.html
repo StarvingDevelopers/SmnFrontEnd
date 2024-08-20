@@ -1,0 +1,19 @@
+<div id="search">
+  <div class="window">
+    <div id="search-input-wrapper">
+      <input [formControl]="searchControl" placeholder="Pesquise grupos ou pessoas">
+    </div>
+
+    <div *ngIf="searchResults.length">
+      <ul>
+        <li *ngFor="let result of searchResults">{{ result.name }}</li>
+      </ul>
+    </div>
+
+    <div *ngIf="searchResults.length">
+      <ul>
+        <li *ngFor="let result of searchResults">{{ result.name }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
