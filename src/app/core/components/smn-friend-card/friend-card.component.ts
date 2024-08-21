@@ -15,10 +15,9 @@ import {UserProfileCardComponent} from "../smn-user-profile-card/user-profile-ca
   styleUrls: ['../../../sass/main.css']
 })
 
-export class FriendCardComponent implements OnInit{
+export class FriendCardComponent implements OnInit {
   friends: any[] = [];
-  activeFriend: any = null;
-  eita = false
+  visibility: boolean[] = []
 
   constructor(private friendService: FriendsService) {}
 
@@ -32,16 +31,17 @@ export class FriendCardComponent implements OnInit{
         console.error(err);
       }
     });
+
+    this.visibility = new Array(this.friends.length).fill(false);
   }
 
-  showProfile(friend: any): void {
-    this.activeFriend = friend;
-    this.eita = true
-    console.log('ta la')
-  }
+  showProfile(index: number): void {
+    this.visibility.forEach((isVisible, i) => {
+      if (isVisible && i !== index) {
+        this.visibility[i] = false;
+      }
+    });
 
-  hideProfile(): void {
-    this.activeFriend = null;
-    this.eita = false;
+    this.visibility[index] = !this.visibility[index];
   }
 }

@@ -5,6 +5,7 @@ smn-user-profile-card {
   border-radius: 17px;
   position: absolute;
   left: 100px;
+  z-index: 2;
 }
 
 .user-profile-wrapper {
@@ -46,4 +47,24 @@ smn-user-profile-card {
   background-color: $contrast_background;
   border-radius: 7px;
   padding: 5px;
+}
+
+.friend-accept-deny-wrapper {
+  display: flex;
+  gap: 7px;
+}
+
+
+.accept-friend-btn, .deny-friend-btn {
+  border-radius: 7px;
+  padding: 5px 12px 5px 12px;
+  color: white;
+}
+
+.accept-friend-btn {
+  background-color: $group_color_4;
+}
+
+.deny-friend-btn {
+  background-color: $group_color_1;
 }
