@@ -1,0 +1,71 @@
+<section id="profile-configurations">
+
+    <div id="profile-upper">
+      <h1>Your Configurations:</h1>
+
+      <section id="profile-information">
+        <div>
+          <p class="userName">{{ userName }}</p>
+          <p class="nickName">{{ nickName }}</p>
+        </div>
+
+        <div class="img-circle shadow">
+          <img class="smn-icon" src="{{ url }}" height="127" width="225" alt="SMN logo" >
+        </div>
+      </section>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="updatedForm" >
+      <div id="profile-lower">
+        <section id="configurations-inputs-left">
+          <h2>Edit Profile</h2>
+
+          <p>Nickname:</p>
+          <div class="input-wrapper shadow">
+            <input type="text" name="nickName" formControlName="nickName" id="nickName-input">
+          </div>
+
+          <p>Email address:</p>
+          <div class="input-wrapper shadow">
+            <img ngSrc="../../../../assets/images/person_lock.svg" alt="" height="24" width="20">
+            <input type="email" name="email" formControlName="email" id="email-input">
+          </div>
+
+          <p>Password:</p>
+          <div class="input-wrapper shadow">
+            <img ngSrc="../../../../assets/images/padlock.svg" alt="" height="16" width="14">
+            <input type="password" name="password" formControlName="password" id="password-input">
+          </div>
+
+          <p>New password:</p>
+          <div class="input-wrapper shadow">
+            <img ngSrc="../../../../assets/images/padlock.svg" alt="" height="16" width="14">
+            <input type="password" name="newPassword" formControlName="newPassword" id="newPassword-input">
+          </div>
+
+          <p>Gender:</p>
+          <div class="input-wrapper shadow">
+            <input type="text" name="gender" formControlName="gender" id="gender-input">
+          </div>
+        </section>
+
+        <section id="configurations-inputs-right">
+
+          <div>
+            <div class="img-circle-big shadow">
+              <img src="{{ url }}" alt="profile picture" height="127" width="225">
+            </div>
+            <div id="button-wrapper">
+              <label for="profilePictureInput">Edit</label>
+              <input type="file" accept="image/png, image/jpeg, image/gif" id="profilePictureInput" (change)="pictureUploaded($event)">
+            </div>
+          </div>
+          <p>Bio:</p>
+          <textarea name="bio" formControlName="bio" id="bio-input"></textarea>
+        </section>
+      </div>
+
+      <button type="submit" id="submit-button" class="shadow">Update</button>
+    </form>
+
+</section>

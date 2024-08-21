@@ -1,9 +1,6 @@
-﻿<main id="register-root">
-  <div id="register-wrapper" class="shadow">
+﻿<div id="register-wrapper" class="shadow">
 
-    <app-register-step-one *ngIf="currentStep === 1" (next)="nextStep()" ></app-register-step-one>
-    <app-register-step-two *ngIf="currentStep === 2" (next)="nextStep()" ></app-register-step-two>
-    <app-register-step-three *ngIf="currentStep === 3" ></app-register-step-three>
-
-  </div>
-</main>
+  <app-register-step-one *ngIf="currentStep === 1" (next)="nextStep()" ></app-register-step-one>
+  <app-register-step-two *ngIf="currentStep === 2" (next)="nextStep()" ></app-register-step-two>
+  <app-register-step-three *ngIf="currentStep === 3" ></app-register-step-three>
+</div>
