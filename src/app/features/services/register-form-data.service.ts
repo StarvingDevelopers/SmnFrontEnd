@@ -28,7 +28,7 @@ export class FormDataService {
       birthdate: this.formData.value.birthdate
     }
 
-    this.dataService.postData(data,'/account/create').subscribe({
+    this.dataService.postData(data,'account/create').subscribe({
       next: response => this.handleResponse(response),
       error: err => console.log(err)
     });

@@ -43,7 +43,7 @@ export class ProfileConfigurationComponent {
       password: this.updatedForm.get('password')?.value
     }
 
-    this.dataService.postData(userData, '/auth/authenticate').subscribe({
+    this.dataService.postData(userData, 'auth/authenticate').subscribe({
       next: response => this.updateProfile(response),
       error: err => console.log(err)
     });
@@ -60,7 +60,7 @@ export class ProfileConfigurationComponent {
       description: this.updatedForm.get('bio')?.value
     }
 
-    this.dataService.postData(updatedData, '/profile/update').subscribe({
+    this.dataService.postData(updatedData, 'profile/update').subscribe({
       next: response => this.handleResponse(response),
       error: err => console.log(err)
     });
