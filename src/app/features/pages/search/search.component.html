@@ -4,16 +4,19 @@
       <input [formControl]="searchControl" placeholder="Pesquise grupos ou pessoas">
     </div>
 
-    <div *ngIf="searchResults.length">
-      <ul>
-        <li *ngFor="let result of searchResults">{{ result.name }}</li>
-      </ul>
-    </div>
-
-    <div *ngIf="searchResults.length">
-      <ul>
-        <li *ngFor="let result of searchResults">{{ result.name }}</li>
-      </ul>
+    <div *ngIf="groups.length">
+      <div class="inner-groups">
+        @for (group of groups; track group) {
+          <smn-card color="{{group.baseColor}}">
+            <i class="bola-azul"></i>
+            <img class="shadow" src="{{group.profileImage}}" priority height="127" width="225" alt="">
+            <div class="group-card-text">
+              <h3>{{group.customName}}</h3>
+              <p>{{group.description}}</p>
+            </div>
+          </smn-card>
+        }
+      </div>
     </div>
   </div>
 </div>
