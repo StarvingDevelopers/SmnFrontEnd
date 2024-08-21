@@ -519,10 +519,11 @@ main {
   color: #fff;
 }
 
-#register-root {
+register {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 #register-wrapper {
@@ -627,6 +628,127 @@ search {
   width: 220px;
   height: 40px;
   padding: 0 0 0 5px;
+}
+
+app-profile-configuration {
+  width: 100%;
+}
+
+#profile-configurations {
+  background: #343434;
+  background: linear-gradient(0deg, rgb(52, 52, 52) 39%, rgba(127, 126, 223, 0.2) 68%);
+  border-radius: 12px;
+  height: 80.5%;
+  padding: 80px 40px;
+}
+#profile-configurations #profile-upper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+#profile-configurations #profile-upper h1 {
+  font-weight: normal;
+}
+#profile-configurations #profile-upper #profile-information {
+  min-width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#profile-configurations #profile-upper #profile-information .nickName {
+  color: #C2C2C2;
+  font-size: small;
+}
+#profile-configurations #profile-lower {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  margin-right: 25px;
+}
+#profile-configurations #profile-lower p {
+  font-size: smaller;
+  color: #C2C2C2;
+  margin: 8px 5px;
+}
+#profile-configurations #profile-lower #configurations-inputs-left .input-wrapper {
+  background-color: #ECD06B;
+  display: flex;
+  align-items: center;
+  height: 42px;
+  width: 306px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#profile-configurations #profile-lower #configurations-inputs-left .input-wrapper input {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+}
+#profile-configurations #profile-lower #configurations-inputs-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#profile-configurations #profile-lower #configurations-inputs-right .img-circle-big {
+  background-color: #aaa;
+  border-radius: 50%;
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#profile-configurations #profile-lower #configurations-inputs-right .img-circle-big img {
+  height: 100%;
+  width: 24000%;
+  overflow: visible;
+}
+#profile-configurations #profile-lower #configurations-inputs-right input {
+  position: absolute;
+  z-index: -2;
+  transform: translateY(20000px);
+}
+#profile-configurations #profile-lower #configurations-inputs-right div #button-wrapper {
+  position: relative;
+}
+#profile-configurations #profile-lower #configurations-inputs-right label {
+  background-color: #D9D9D9;
+  padding: 3px 12px;
+  color: #3F3636;
+  border-radius: 5px;
+  float: right;
+  transform: translateY(-20px) translateX(-20px);
+}
+#profile-configurations #profile-lower #configurations-inputs-right label:hover {
+  cursor: pointer;
+}
+#profile-configurations #profile-lower #configurations-inputs-right p {
+  width: 100%;
+  text-align: left;
+  padding-left: 10px;
+}
+#profile-configurations #profile-lower #configurations-inputs-right #bio-input {
+  height: 112px;
+  width: 325px;
+  background-color: #ECD06B;
+  border-radius: 10px;
+  text-wrap: wrap;
+}
+#profile-configurations #submit-button {
+  width: 82px;
+  height: 30px;
+  background-color: #C2C2C2;
+  border-radius: 10px;
+  color: #3F3636;
+  font-size: large;
+  float: right;
+}
+#profile-configurations #submit-button:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
