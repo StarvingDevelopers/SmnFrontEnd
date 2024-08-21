@@ -1,4 +1,4 @@
-﻿import {Component, Input, Renderer2, ElementRef} from '@angular/core';
+﻿import {Component} from '@angular/core';
 
 @Component({
   selector: 'smn-option',

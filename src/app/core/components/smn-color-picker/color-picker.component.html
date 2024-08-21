@@ -1,0 +1,9 @@
+<div class="color-picker">
+  <h4>Cor do grupo</h4>
+  <div class="color-box-wrapper">
+    <div class="color-box" *ngFor="let color of colors"
+         [style.background-color]="color"
+         (click)="onClick($event)">
+    </div>
+  </div>
+</div>

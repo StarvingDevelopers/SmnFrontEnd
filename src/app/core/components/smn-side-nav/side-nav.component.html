@@ -2,12 +2,16 @@
   <div id="nav-first-half">
     <section id="home-options">
       <smn-option>
+        <div (click)="navigateTo('/')" class="shadow">
+          <i class="fa-solid fa-house"></i>
+        </div>
+      </smn-option>
+      <smn-option>
         <div (click)="navigateTo('search')" class="shadow">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
       </smn-option>
-
-      <smn-option>
+      <smn-option (click)="newGroupBtn()">
         <div class="shadow">
           <i class="fa-solid fa-plus"></i>
         </div>
@@ -16,7 +20,6 @@
 
     <section id="friends">
       <smn-friend-card></smn-friend-card>
-
     </section>
   </div>
 
@@ -24,7 +27,7 @@
     <section id="profile">
       <div class="img-circle shadow">
         <a href="/configurations">
-          <img priority class="smn-icon" ngSrc="./assets/images/fantasminha.png" height="127" width="225" alt="SMN logo">
+          <img priority class="smn-icon" src="{{userProfile.profileImage}}" height="127" width="225" alt="SMN logo">
         </a>
       </div>
     </section>
