@@ -7,7 +7,6 @@ import { BehaviorSubject } from 'rxjs';
 
 export class GroupModalVisibilityService {
   private isVisible = new BehaviorSubject<boolean>(false);
-
   isVisible$ = this.isVisible.asObservable();
 
   setValue(value: boolean) {

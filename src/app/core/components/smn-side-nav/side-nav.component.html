@@ -2,11 +2,15 @@
   <div id="nav-first-half">
     <section id="home-options">
       <smn-option>
+        <div (click)="navigateTo('/')" class="shadow">
+          <i class="fa-solid fa-house"></i>
+        </div>
+      </smn-option>
+      <smn-option>
         <div (click)="navigateTo('search')" class="shadow">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
       </smn-option>
-
       <smn-option (click)="newGroupBtn()">
         <div class="shadow">
           <i class="fa-solid fa-plus"></i>

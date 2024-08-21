@@ -29,7 +29,6 @@ export class SideNavComponent {
 
   newGroupBtn() {
     this.isCreateGroupVisible = !this.isCreateGroupVisible
-
     this.visibilityService.setValue(this.isCreateGroupVisible)
   }
 
