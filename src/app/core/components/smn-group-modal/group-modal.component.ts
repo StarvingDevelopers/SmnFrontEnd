@@ -3,6 +3,7 @@ import {ColorPickerComponent} from "../smn-color-picker/color-picker.component";
 import {NgIf} from "@angular/common";
 import {GroupModalVisibilityService} from "../../services/group-modal-visibility.service";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {DataService} from "../../../features/services/data.service";
 
 @Component({
   selector: 'smn-group-modal',
@@ -17,17 +18,22 @@ import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 })
 
 export class GroupModalComponent implements OnInit {
-
+  imagePath: undefined;
+  userAccount = JSON.parse(localStorage.getItem("userAccount")!)
   isVisible: boolean = false;
   groupForm: FormGroup;
   selectedImage: string | ArrayBuffer | null = null;
 
-  constructor(private visibilityService: GroupModalVisibilityService, private fb: FormBuilder) {
+  constructor(private visibilityService: GroupModalVisibilityService, private fb: FormBuilder, private dataService: DataService) {
+    const colors = ['#C74D5C', '#7F7EDF', '#ECD06B', '#85A97D'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
     this.groupForm = this.fb.group({
-      photo: [null],
+      profileImage: [null],
       name: [''],
+      ownerName: this.userAccount.username,
       description: [''],
-      color: ['']
+      baseColor: randomColor
     });
   }
 
@@ -37,18 +43,22 @@ export class GroupModalComponent implements OnInit {
     })
   }
 
-  onFileSelected(event: Event): void {
-    const file = (event.target as HTMLInputElement).files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.selectedImage = reader.result;
-      };
-      reader.readAsDataURL(file);
+  pictureUploaded(event: any) {
+    const files = event.target.files;
+    if (files.length === 0) return;
+
+    const reader = new FileReader();
+    this.imagePath = files;
+    reader.readAsDataURL(files[0]);
+    reader.onload = (_event) => {
+      this.selectedImage = reader.result!;
     }
   }
 
   onSubmit(): void {
     console.log(this.groupForm.value);
+
+    this.dataService.postData(this.groupForm.value, 'group/create').subscribe()
+
   }
 }

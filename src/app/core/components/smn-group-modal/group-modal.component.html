@@ -6,12 +6,8 @@
 
   <form [formGroup]="groupForm" (ngSubmit)="onSubmit()">
     <div class="group-inputs">
-      <label>Foto</label>
-      <input type="file" formControlName="photo" (change)="onFileSelected($event)" #fileInput style="display:none">
-      <button type="button" (click)="fileInput.click()">Escolher Foto</button>
-      <div *ngIf="selectedImage" class="image-preview">
-        <img [src]="selectedImage" alt="Preview da foto">
-      </div>
+      <input type="file" formControlName="profileImage" (change)="pictureUploaded($event)" #fileInput style="display:none">
+      <img class="image-preview" (click)="fileInput.click()" [src]="selectedImage || '../../../../assets/images/fantasminha.png'">
     </div>
 
     <div class="group-inputs">
@@ -25,9 +21,9 @@
     </div>
 
     <div class="group-inputs">
-      <smn-color-picker formControlName="color"></smn-color-picker>
+      <smn-color-picker ></smn-color-picker>
     </div>
 
-    <button type="submit">Criar Grupo</button>
+    <button id="newGroupBtn" type="submit">Criar Grupo</button>
   </form>
 </div>

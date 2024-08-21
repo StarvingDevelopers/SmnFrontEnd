@@ -181,6 +181,23 @@ smn-friend-request-list smn-user-profile-card {
   cursor: pointer;
 }
 
+#newGroupBtn {
+  background-color: #ECD06B;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 7px;
+}
+
+.image-preview {
+  align-self: center;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: grey;
+  cursor: pointer;
+}
+
 .option {
   cursor: pointer;
 }
