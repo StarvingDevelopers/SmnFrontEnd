@@ -209,6 +209,9 @@ smn-friend-request-list smn-user-profile-card {
   padding: 12px;
   height: 95%;
 }
+#side-nav smn-option {
+  cursor: pointer;
+}
 
 #nav-first-half {
   display: flex;
@@ -235,6 +238,30 @@ smn-friend-request-list smn-user-profile-card {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  color: white;
+  opacity: 0.9;
+  z-index: 1000;
+  transition: opacity 0.5s;
+}
+
+.toast-container.success {
+  background-color: #85A97D;
+}
+
+.toast-container.error {
+  background-color: #C74D5C;
+}
+
+.toast-container p {
+  margin: 0;
 }
 
 smn-user-profile-card {
@@ -577,6 +604,29 @@ main {
 
 .register-inputs-wrapper-vertical p {
   font-size: 12px;
+}
+
+search {
+  width: 100%;
+}
+
+#search {
+  display: flex;
+  height: 95%;
+}
+
+#search-input-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#search-input-wrapper input {
+  color: #D47363;
+  background-color: #ECD06B;
+  border-radius: 10px;
+  width: 220px;
+  height: 40px;
+  padding: 0 0 0 5px;
 }
 
 /*# sourceMappingURL=main.css.map */
