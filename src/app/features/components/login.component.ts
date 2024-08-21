@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit{
       password:this.loginForm.get('password')?.value
     }
 
-    this.dataService.postData(data, '/auth/authenticate').subscribe({
+    this.dataService.postData(data, 'auth/authenticate').subscribe({
         next: response => this.handleResponse(response),
         error: err => console.log(err)
       }
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit{
 
   handleResponse(response: any) {
     this.authService.login();
-    localStorage.setItem('userData', JSON.stringify(response));
+    localStorage.setItem('userAccount', JSON.stringify(response));
     this.router.navigate(['/'])
   }
 

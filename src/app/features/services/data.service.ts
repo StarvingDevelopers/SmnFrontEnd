@@ -1,6 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {catchError, Observable, throwError} from 'rxjs';
+import {ToastService} from "../../core/services/toast.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,16 @@ export class DataService {
 
   private apiUrl = 'https://backend.starvingdevelopers.tech';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastService: ToastService) {
+    this.handleError = this.handleError.bind(this);
+    this.showError = this.showError.bind(this);
+  }
 
   // Metodo GET
   getData(path: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}${path}`);
+    return this.http.get<any>(`${this.apiUrl}${path}`).pipe(
+      catchError(this.handleError)
+    )
   }
 
   // Metodo POST
@@ -47,8 +53,17 @@ export class DataService {
     } else {
       errorMessage = `Server-side error: ${error.status} ${error.message}`;
     }
-    console.error(errorMessage);
+
+    this.showError(errorMessage)
 
     return throwError(() => new Error('Algo deu errado; tente novamente depois'));
+  }
+
+  showError(message: string) {
+    this.toastService.showToast(message, 'error');
+  }
+
+  showSuccess(message: string) {
+    this.toastService.showToast(message, 'success');
   }
 }
